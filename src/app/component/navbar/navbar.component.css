@@ -1,0 +1,35 @@
+.navbar{
+    background: var(--blue-radial-gradient);
+    backdrop-filter:blur(5px);
+}
+.navbar .navbar-brand{
+    font-size: 24px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: #fff;
+}
+.navbar .navbar-brand span{
+    color: #FF602E;
+}
+.navbar #collapsibleNavId .navbar-nav{
+    margin-bottom: 0 !important;
+}
+
+.navbar #collapsibleNavId .navbar-nav .nav-item{
+    margin-right: 20px;
+}
+.navbar #collapsibleNavId .navbar-nav .nav-item .nav-link{
+    letter-spacing: 2px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+}
+.navbar .right-nav .nav-item{
+    margin-right:20px;
+}
+.navbar .right-nav .nav-item .nav-link{
+    font-weight: 600;
+}
+.navbar .right-nav .nav-item .nav-link .user-icon{
+    font-size: 24px;
+}
