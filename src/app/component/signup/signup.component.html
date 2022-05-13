@@ -1,1 +1,16 @@
-<p>signup works!</p>
+<div class="formGroup">
+        <input [(ngModel)]="user.name" class="form-control" type="text" placeholder="name">
+        <input [(ngModel)]="user.email" type="email" class="form-control" placeholder="email">
+        <input [(ngModel)]="user.password" type="password" class="form-control" placeholder="password">
+        <input [(ngModel)]="user.mobile" type="number" class="form-control" placeholder="mobile">
+        <input [(ngModel)]="user.alternateNumber" type="number" class="form-control" placeholder="alternateNumber">
+
+        <button (click)="SignUp()" type="submit" class="btn btn-primary">Sign Up</button>
+
+
+        <div class="mt-5 text-align-center" >
+          <a href="sign-in">Signin</a>
+        </div>
+        
+
+</div>

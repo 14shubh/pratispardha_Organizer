@@ -1,1 +1,17 @@
-<p>signin works!</p>
+<div class="formGroup">
+    <
+    <input [(ngModel)]="user.email" type="email" class="form-control" placeholder="email">
+    <input [(ngModel)]="user.password" type="password" class="form-control" placeholder="password">
+    
+    <button (click)="SignIn()" type="submit" class="btn btn-primary">Sign In</button>
+
+
+    <div class="mt-5 text-align-center" >
+      <a href="sign-up">Signup</a>
+    </div>
+    
+    <div class="mt-5">
+        <button (click)="signinWithGoogle()" class=" btn btn -danger"> sign in with google</button>
+    </div>
+
+</div>

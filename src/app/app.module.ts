@@ -11,6 +11,21 @@ import { SigninComponent } from './component/signin/signin.component';
 import { SignupComponent } from './component/signup/signup.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { GoogleLoginProvider, SocialLoginModule } from 'angularx-social-login';
+
+const socialProvider={
+  provide:"SocialAuthServiceConfig",
+  useValue:{
+    providers:[{
+      id:GoogleLoginProvider.PROVIDER_ID,
+      provider:new GoogleLoginProvider('862613242441-586e0opknj44rplkvhh3d6q6gfjngiij.apps.googleusercontent.com')
+    }]
+  }
+};
+ 
+
 
 @NgModule({
   declarations: [
@@ -26,9 +41,12 @@ import { NavbarComponent } from './component/navbar/navbar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    SocialLoginModule
   ],
-  providers: [],
+  providers: [socialProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
