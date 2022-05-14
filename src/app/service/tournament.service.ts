@@ -9,9 +9,9 @@ import {Tournament} from '../model/tournament'
 export class TournamentService {
   
   constructor(private http:HttpClient) { }
-  public uploadTournament(tournament:Tournament): Observable<any> {
+  public uploadTournament(fd:any): Observable<any> {
     let url = "https://spardhaa.herokuapp.com/tournament/upload-tournament";
-    return this.http.post<any>(url, tournament);
+    return this.http.post<any>(url, fd);
   }
   public viewTournamentByTournamentId(tournament:Tournament): Observable<any> {
     let url = "https://spardhaa.herokuapp.com/tournamentview-tournament/"+tournament.tournamentId;

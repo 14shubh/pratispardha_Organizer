@@ -1,15 +1,20 @@
+import { StringMap } from "@angular/compiler/src/compiler_facade_interface";
+
 export class Tournament {
     constructor(
-        public tournamentName:String,
-        public tournamentTeamLimit:Number,
-        public tournamentAddress:String,
-        public tournamentStartDate:String,
-        public tournamentApplyDate:String,
-        public tournamentEndDate:String,
-        public tournamentFees:String,
-        public tournamentRules:String,
-        public prizeAmount:String,
-        public organiserId:String,
-        public tournamentId:String
+        public tournamentName:string,
+        public tournamentTeamLimit:string,
+        public tournamentAddress:string,
+        public tournamentStartDate:number|string,
+        public tournamentApplyDate:number|string,
+        public tournamentEndDate:number|string,
+        public tournamentFees:string,
+        public tournamentRules:string,
+        public firstPrize:string,
+        public secondPrize:string,
+        public thirdPrize:string,
+       public organiserId:string|any,
+        public tournamentId:string,
+        public banner :File|string
     ){}
 }
