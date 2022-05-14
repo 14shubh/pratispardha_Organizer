@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule} from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,7 +24,7 @@ const socialProvider={
     }]
   }
 };
- 
+
 
 
 @NgModule({
@@ -40,11 +40,15 @@ const socialProvider={
     NavbarComponent
   ],
   imports: [
-    BrowserModule,
+
+BrowserModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    SocialLoginModule
+    SocialLoginModule,
+
+
+
   ],
   providers: [socialProvider],
   bootstrap: [AppComponent]
