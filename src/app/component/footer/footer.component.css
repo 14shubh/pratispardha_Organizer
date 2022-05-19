@@ -1,67 +1,179 @@
 .footer{
-    margin-top: 60px;
-    padding:40px 0;
-    background:var(--blue-radial-gradient);
-    color: #fff;
-    position: relative;
+  margin-top: 60px;
+  padding:40px 0 20px 0;
+  background:var(--blue-radial-gradient);
+  color: #fff;
+  position: relative;
 }
-
+.footer-content{
+  margin-bottom: 10px;
+}
+.title{
+  width: fit-content;
+}
 .title h3{
-    font-size:1.8rem;
-    padding-left:2rem;
+  font-size:18px;
+  /* padding-left:20px; */
+  position: relative;
+}
+.title h3::before{
+  content: " ";
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(255, 255, 255);
 }
 
 .links{
-    padding: 1rem 2rem;
-    width:fit-content;
+  padding: 10px 0;
+  width:fit-content;
 }
 .links .footer-links{
-    padding: 0;
+  padding: 0;
 }
 
 .links .footer-links .footer-list{
-    font-size: 1.6rem;
-    list-style: none;
-    margin:2rem 0;
+  font-size: 16px;
+  list-style: none;
+  margin:20px 0;
 }
 .links .footer-links .footer-list a{
-    text-decoration: none;
-    color:#fff;
-    font-weight: 200;
-    letter-spacing: 1px;
+  text-decoration: none;
+  color:#fff;
+  font-weight: 200;
+  letter-spacing: 1px;
 }
 .contact_data .title h2{
-    font-size:2.4rem;
-    padding-left:2rem;
+  font-size:20px;
+  /* padding-left:20px; */
+  position:relative;
+}
+.contact_data .title h2::before{
+  content: " ";
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(255, 255, 255);
 }
 .contact_data .links .footer-links .footer-list{
-    font-weight:200;
+  font-weight:200;
 }
 .contact_data .links .footer-links .footer-list i{
-    font-weight:bold;
-    margin-right:1.5rem;
+  font-weight:bold;
+  margin-right:15px;
 }
 
 .footer .horizontal-line{
-    height: 0.1rem;
-    width: 100%;
-    background-color: #fff;
+  height: 1px;
+  width: 100%;
+  background-color: rgba(209, 209, 209, 0.23);
+  position: absolute;
+  bottom:70px;
 }
 .social-icon{
-    position: absolute;
-    bottom: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:5px 20px;
 }
 .social-icon span{
-    font-size: 1.2rem;
-    letter-spacing: 1px;
+  font-size: 12px;
+  letter-spacing: 1px;
 }
-.social-icon .icons{
-}
+
 .social-icon .icons i{
-    font-size: 3rem;
-    margin: 0 1rem;
+  font-size: 30px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+.social-icon .icons i:hover{
+  color: rgb(13, 82, 194);
+}
+
+
+@media screen and (min-width:1200px) and (max-width:1400px) {
+  .title h3{
+      padding-left:10px;
+  }
+  .contact_data .title h2{
+      font-size:20px;
+      padding-left:10px;
+  }
+  .links{
+      padding: 10px 0;
+  }
+  .links .footer-links .footer-list{
+      font-size: 14px;
+      list-style: none;
+      margin:20px 0;
+  }
+  .contact_data .links .footer-links .footer-list i{
+      font-weight:bold;
+      margin-right:20px;
+  }
 
 }
+@media screen and (min-width:992px) and (max-width:1200px) {
+  .title h3{
+      padding-left:10px;
+  }
+  .contact_data .title h2{
+      font-size:20px;
+      padding-left:10px;
+  }
+  .links{
+      padding: 10px 0;
+      width: 100%;
+  }
+  .links .footer-links .footer-list{
+      font-size: 12px;
+      list-style: none;
+      margin:20px 0;
+  }
+  .contact_data .links .footer-links .footer-list i{
+      font-weight:bold;
+      margin-right:10px;
+  }
+
+}
+@media only screen and (min-width: 568px) and (max-width:767px) {
+  .social-icon{
+      padding:5px 10px;
+  }
+  .social-icon span{
+      font-size: 10px;
+      /* letter-spacing: 1px; */
+  }
+  .links{
+      padding: 10px 0;
+  }
+  .social-icon .icons i{
+      font-size: 24px;
+      margin: 0 8px;
+
+  }
+
+}
+@media only screen and (min-width: 320px) and (max-width:567px) {
+  .social-icon{
+      padding:5px 10px;
+  }
+  .social-icon span{
+      font-size: 7px;
+      /* letter-spacing: 1px; */
+  }
+  .links{
+      padding: 10px 0;
+  }
+  .social-icon .icons i{
+      font-size: 18px;
+      margin: 0 6px;
+
+  }
+
+}
+

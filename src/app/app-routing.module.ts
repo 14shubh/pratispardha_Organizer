@@ -10,6 +10,10 @@ import {AuthGuard} from './guard/auth.guard'
 
 const routes: Routes = [
   {
+    path:'',
+    component:SigninComponent
+  },
+  {
     path:'event-upload',
     component: EventUploadComponent,
     canActivate:[AuthGuard]
@@ -17,6 +21,7 @@ const routes: Routes = [
   {
     path:'sign-in',
     component:SigninComponent
+
   },
   {path:'sign-up',
 component:SignupComponent
@@ -28,14 +33,12 @@ component:SignupComponent
 },
 {
   path:'about-us',
-  component:AboutComponent,
-  canActivate:[AuthGuard]
+  component:AboutComponent
 },
 
 {
   path:'contact',
   component:ContactComponent,
-  canActivate:[AuthGuard]
 }
 ];
 

@@ -1,57 +1,56 @@
-
 <div class="container text-center upload">
-    <div class="heading">
-        <h2>Upload new EVENT</h2>
-    </div>
-    <div class="event-details">
-        <div class="form-group">
-            <input [(ngModel)]="tournament.tournamentName" type="text" placeholder="Event Name" class="form-control">
-        </div>
-        <div class="form-group">
-            <input [(ngModel)]="tournament.tournamentAddress" type="text" placeholder="Address" class="form-control">
-        </div>
-        <div class="form-group">
-            <input [(ngModel)]="tournament.tournamentTeamLimit" type="number" placeholder="Team limit" class="form-control">
-        </div>
-        <div class="form-group start-date">
+  <div class="heading">
+      <h2>Upload new EVENT</h2>
+  </div>
+  <div class="event-details">
+      <div class="form-group">
+          <input [(ngModel)]="tournament.tournamentName" type="text" placeholder="Event Name" class="form-control">
+      </div>
+      <div class="form-group">
+          <input [(ngModel)]="tournament.tournamentAddress" type="text" placeholder="Address" class="form-control">
+      </div>
+      <div class="form-group">
+          <input [(ngModel)]="tournament.tournamentTeamLimit" type="number" placeholder="Team limit" class="form-control">
+      </div>
+      <div class="form-group start-date">
           <h3>Start Date</h3>
 
-            <input [(ngModel)]="tournament.tournamentStartDate" type="date" class="form-control">
-        </div>
-        <div class="form-group apply-date">
+          <input [(ngModel)]="tournament.tournamentStartDate" type="date" class="form-control">
+      </div>
+      <div class="form-group apply-date">
           <h3>Apply Date</h3>
 
-            <input [(ngModel)]="tournament.tournamentApplyDate" type="date" class="form-control">
-        </div>
-        <div class="form-group end-date">
+          <input [(ngModel)]="tournament.tournamentApplyDate" type="date" class="form-control">
+      </div>
+      <div class="form-group end-date">
           <h3>End Date</h3>
 
-            <input [(ngModel)]="tournament.tournamentEndDate" type="date" class="form-control">
-        </div>
+          <input [(ngModel)]="tournament.tournamentEndDate" type="date" class="form-control">
+      </div>
 
-        <div class="form-group">
-            <input [(ngModel)]="tournament.tournamentFees" type="text" placeholder="Fess" class="form-control">
-        </div>
-        <div class="form-group">
-            <input [(ngModel)]="tournament.firstPrize" type="text" placeholder="First Prize" class="form-control">
-        </div>
-        <div class="form-group">
-            <input [(ngModel)]="tournament.secondPrize" type="text" placeholder="Second Prize" class="form-control">
-        </div>
-        <div class="form-group">
-            <input [(ngModel)]="tournament.thirdPrize" type="text" placeholder="Third Prize" class="form-control">
-        </div>
-        <div class="form-group start-date">
-            <textarea [(ngModel)]="tournament.tournamentRules" name="rules" id="rules" cols="30" rows="10" placeholder="Rules" class="form-control"></textarea>
-        </div>
-        <div class="form-group">
-            <input (change)="select($event)" type="file" class="form-control">
-        </div>
+      <div class="form-group">
+          <input [(ngModel)]="tournament.tournamentFees" type="text" placeholder="Fess" class="form-control">
+      </div>
+      <div class="form-group">
+          <input [(ngModel)]="tournament.firstPrize" type="text" placeholder="First Prize" class="form-control">
+      </div>
+      <div class="form-group">
+          <input [(ngModel)]="tournament.secondPrize" type="text" placeholder="Second Prize" class="form-control">
+      </div>
+      <div class="form-group">
+          <input [(ngModel)]="tournament.thirdPrize" type="text" placeholder="Third Prize" class="form-control">
+      </div>
+      <div class="form-group start-date">
+          <textarea [(ngModel)]="tournament.tournamentRules" name="rules" id="rules" cols="30" rows="10" placeholder="Rules" class="form-control"></textarea>
+      </div>
+      <div class="form-group">
+          <input (change)="select($event)" type="file" class="form-control">
+      </div>
 
-
-        <div class="buttons">
-            <a class="btn btn-outline-danger">Cancel</a>
-            <a  class="btn btn-outline-primary" (click)="uploadTournament()">Upload</a>
-        </div>
-    </div>
+      <div class="buttons">
+          <a class="btn btn-outline-danger">Cancel</a>
+          <a class="btn btn-outline-primary" (click)="uploadTournament()">Upload</a>
+      </div>
+  </div>
 </div>
+

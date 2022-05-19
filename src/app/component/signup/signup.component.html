@@ -1,4 +1,4 @@
-<div class="formGroup">
+<!-- <div class="formGroup">
         <input [(ngModel)]="user.name" class="form-control" type="text" placeholder="name">
         <input [(ngModel)]="user.email" type="email" class="form-control" placeholder="email">
         <input [(ngModel)]="user.password" type="password" class="form-control" placeholder="password">
@@ -11,6 +11,61 @@
         <div class="mt-5 text-align-center" >
           <a href="sign-in">Signin</a>
         </div>
-        
 
+
+</div> -->
+
+
+
+<!-- here copy code -->
+
+
+
+
+<div class="container">
+  <div class="row ${1| ,row-cols-2,row-cols-3, auto,justify-content-md-center,|} signup-box">
+
+      <div class="col-md-7 right">
+          <div class="input-box">
+              <div class="title">
+                  <h3>Sign Up</h3>
+              </div>
+              <div class="input-area">
+                  <div class="form-group">
+                      <i class="fa-solid fa-user"></i>
+                      <input [(ngModel)]="user.name" type="text" name="name" id="name" class="form-control" placeholder="Name" aria-describedby="helpId">
+                      <!-- <small id="helpId" *ngIf="name.errors?.['required'] && name.touched">Please enter name</small> -->
+                  </div>
+                  <div class="form-group">
+                      <i class="fa-solid fa-envelope"></i>
+                      <input [(ngModel)]="user.email" type="email" name="email" id="email" class="form-control" placeholder="Email" aria-describedby="helpId">
+                      <!-- <small id="helpId" *ngIf="email.errors?.['required'] && email.touched">Please enter email</small> -->
+                  </div>
+                  <div class="form-group">
+                      <i class="fa-solid fa-unlock-keyhole"></i>
+                      <input [(ngModel)]="user.password" type="password" name="password" id="password" class="form-control" placeholder="Password" aria-describedby="helpId">
+                      <!-- <small id="helpId" *ngIf="pass.errors?.['required'] && pass.touched">Please enter password</small> -->
+                  </div>
+                  <div class="form-group">
+                      <i class="fa-solid fa-mobile"></i>
+                      <input [(ngModel)]="user.mobile" type="phone" name="mobile" id="mobile" class="form-control" placeholder="Mobile" aria-describedby="helpId">
+                      <!-- <small id="helpId" *ngIf="mobile.errors?.['required'] && mobile.touched">Please enter mobile</small> -->
+                  </div>
+                  <div class="form-group">
+                      <i class="fa-solid fa-mobile"></i>
+                      <input type="phone" name="mobile" id="mobile" class="form-control" placeholder="Alternate Mobile" aria-describedby="helpId">
+                      <!-- <small id="helpId" *ngIf="mobile.errors?.['required'] && mobile.touched">Please enter mobile</small> -->
+                  </div>
+
+                  <div class="sign-up-btn">
+                      <a (click)="SignUp()" class=" sign-up">Sign Up</a>
+                  </div>
+              </div>
+              <div class="old-user">
+                  <p>Already have an account ? <a>Sign In</a></p>
+              </div>
+          </div>
+      </div>
+  </div>
 </div>
+

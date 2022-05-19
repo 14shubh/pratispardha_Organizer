@@ -1,0 +1,68 @@
+.heading{
+  text-align: center;
+  width: fit-content;
+  position: relative;
+  margin: auto;
+  margin-top: 20px;
+}
+.heading h1{
+  font: size 30px;
+  text-transform: uppercase;
+}
+.heading .border{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: rgb(44, 44, 44);
+}
+.heading .border::before{
+  content: " ";
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  width: 20%;
+  height: 6px;
+  background-color: rgb(255, 255, 255);
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  z-index: 1;
+}
+.heading .border::after{
+  content:"";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height:10px;
+  width:10px;
+  background-color:rgb(44, 44, 44);
+  transform: translate(-50%) rotate(45deg);
+  -webkit-transform: translate(-50%) rotate(45deg);
+  -moz-transform: translate(-50%) rotate(45deg);
+  -ms-transform: translate(-50%) rotate(45deg);
+  -o-transform: translate(-50%) rotate(45deg);
+}
+.paragraph p{
+  text-align: justify;
+  font-size: 18px;
+  font-family: poppins;
+  margin-top: 40px;
+  line-height: 35px;
+  color: black;
+}
+.row{
+  width: 100%; margin: auto; margin-top: 60px; margin-bottom: 40px;justify-content: center;
+}
+
+.card{
+  width: 200px;height: 250px;
+}
+.card.cardimg{
+  width: 200px; height: 150px;
+}
+.card-text{
+  text-align: center; font-size: 16px; font-family: poppins;
+}
