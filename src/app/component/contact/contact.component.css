@@ -1,0 +1,125 @@
+ 
+.box{
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 100px;
+   
+  }
+   
+   .content_box{
+   
+    background-color: #0052A3;
+  }
+  .content_box .title h2{
+    color: #FFFFFF;
+    margin-top: 30px;
+    margin-left: 10px;
+  }
+  .content_box .links .footer-links .footer-list{
+    font-size: 14px;
+    color: #FFFFFF;
+    font-weight: 400;
+    list-style: none;
+    margin: inherit;
+    margin-top: 20px;
+   
+  }
+  .content_box .links .footer-links .footer-list i{
+    margin: 5px;
+  }
+   
+  .right{
+    background: #FFFFFF;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+    padding: 50px 40px 50px 10px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+   
+  }
+  .right .input-area .input-data{
+    max-width: 650px;
+    margin-left: auto;
+  }
+  .right .input-area .name-mobile{
+    display: flex;
+    width: 100%;
+  }
+  .right .input-area .mobile{
+    /* margin: 25px 0 25px 0; */
+  }
+  .right .input-area .name-mobile .form-group{
+    width: 100%;
+  }
+  .right .input-area .name-mobile .form-group input{
+    border: 0;
+    border-bottom: 1px solid rgb(215, 215, 215);
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+  }
+   
+  .right .input-area .form-group input{
+    padding: 0 0 0 35px;
+    border: 0;
+    border-bottom: 1px solid rgb(215, 215, 215);
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    margin-bottom: 10px;
+  }
+   
+  .right .input-area .name-mobile .name{
+    margin-right: 15px;
+  }
+  .send-btn{
+    /* max-width: 650px; */
+    /* margin-left: auto; */
+    /* width: 100%; */
+    /* text-align: center; */
+    margin:50px 0 30px 0;
+  }
+  .send-btn .send{
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 24px;
+    padding: 5px 40px;
+    color: #333;
+    border: 1px solid rgb(99, 99, 99);
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    transition: 0.4s ease-in-out;
+    -webkit-transition: 0.4s ease-in-out;
+    -moz-transition: 0.4s ease-in-out;
+    -ms-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    cursor: pointer;
+    margin-left: 20%;
+   
+  }
+   
+  .right  .input-area .form-group{
+    margin-bottom: 30px;
+    position: relative;
+  }
+  .right  .input-area .form-group i{
+    position: absolute;
+    left: 0px;
+    top: 5px;
+    color: rgb(97, 97, 97);
+    font-size: 14px;
+  }
+   
+   
+   
+  
+  

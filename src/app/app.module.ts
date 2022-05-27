@@ -14,6 +14,7 @@ import { NavbarComponent } from './component/navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { GoogleLoginProvider, SocialLoginModule } from 'angularx-social-login';
+import { ProfileComponent } from './component/profile/profile.component';
 
 const socialProvider={
   provide:"SocialAuthServiceConfig",
@@ -37,7 +38,8 @@ const socialProvider={
     SigninComponent,
     SignupComponent,
     FooterComponent,
-    NavbarComponent
+    NavbarComponent,
+    ProfileComponent
   ],
   imports: [
 

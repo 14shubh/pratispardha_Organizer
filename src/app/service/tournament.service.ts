@@ -2,23 +2,26 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import {Tournament} from '../model/tournament'
-
+ 
 @Injectable({
   providedIn: 'root'
 })
 export class TournamentService {
-  
+  // url:string = "https://spardhaa.herokuapp.com/"
+  url:string = "http://localhost:3000/"
   constructor(private http:HttpClient) { }
   public uploadTournament(fd:any): Observable<any> {
-    let url = "https://spardhaa.herokuapp.com/tournament/upload-tournament";
+    let url = this.url+"tournament/tournament/upload-tournament";
     return this.http.post<any>(url, fd);
   }
-  public viewTournamentByTournamentId(tournament:Tournament): Observable<any> {
-    let url = "https://spardhaa.herokuapp.com/tournamentview-tournament/"+tournament.tournamentId;
+  public viewTournamentByTournamentId(tournamentId:any): Observable<any> {
+    let url = this.url+"tournament/view-tournament/"+tournamentId;
     return this.http.get<any>(url);
   }
-  public viewTournamentByOrganiserId(tournament:Tournament): Observable<any> {
-    let url = "https://spardhaa.herokuapp.comview-tournament-by-organiserId/"+tournament.organiserId;
+  public viewTournamentByOrganiserId(organiserId: any): Observable<any> {
+    let url = this.url+"tournament/view-tournament-by-organiserId/"+organiserId;
     return this.http.get<any>(url);
   }
 }
+ 
+

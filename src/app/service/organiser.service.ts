@@ -29,4 +29,11 @@ export class OrganiserService {
     let url = "https://spardhaa.herokuapp.com/organiser/view-profile/" + organiser.organiserId;
     return this.http.get<any>(url);
   }
+  public saveQuery(name:string,email:string,mobile:string,query:string):Observable<any>{
+    let url="https://spardhaa.herokuapp.com/contact/contact";
+    return this.http.post<any>(url,{name:name,email:email,mobile:mobile,query:query});
+ 
+  }
+
+
 }

@@ -1,1 +1,50 @@
-<p>contact works!</p>
+<div class="container mt-3">
+    <div class="heading">
+      <h1>contact us</h1>
+      <span class="border"></span>
+    </div>
+    <div class="row box">
+      <div class="col-md-3 content_box contact_data">
+        <div class="title">
+          <h2>Pratispardha</h2>
+        </div>
+        <div class="links">
+          <ul class="footer-links">
+            <li class="footer-list"><i class="fas fa-location-arrow  "></i> 4th Flore BCM Heights,indore</li>
+            <li class="footer-list"><i class="fa fa-mobile" aria-hidden="true"></i> +91 8319238671</li>
+            <li class="footer-list"><i class="fas fa-mail-bulk    "></i>pratispardha.22@gmail.com</li>
+          </ul>
+        </div>
+      </div>
+   
+      <div class="col-md-9 right">
+        <div class="input-area">
+          <div class="name-mobile input-data">
+            <div class="form-group name">
+              <i class="fa-solid fa-user"></i>
+              <input [(ngModel)]="name" type="text" class="form-control" id="name" placeholder="Name">
+            </div>
+            <div class="form-group input-data mobile">
+              <i class="fa-solid fa-mobile"></i>
+              <input [(ngModel)]="mobile" type="text" class="form-control" placeholder="Mobile">
+            </div>
+          </div>
+          <div class="form-group input-data email">
+            <i class="fa-solid fa-envelope"></i>
+            <input [(ngModel)]="email" type="text" class="form-control" placeholder="Email">
+          </div>
+          <div class="form-group textbox input-data">
+            <textarea [(ngModel)]="query" class="form-control" rows="7" placeholder="Write your message here"></textarea>
+          </div>
+          <div (click)="save()" class="send-btn">
+            <a  class="btn btn-outline-primary send">Send</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+   
+   
+  
+  
