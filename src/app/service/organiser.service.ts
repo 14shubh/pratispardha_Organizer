@@ -34,6 +34,14 @@ export class OrganiserService {
     return this.http.post<any>(url,{name:name,email:email,mobile:mobile,query:query});
  
   }
+  public sendMail(email:string):Observable<any>{
+    let url="https://spardhaa.herokuapp.com/organiser/send-mail";
+    return this.http.post<any>(url,{email:email})
+  }
+  public newPassword(Id:string, password:string):Observable<any>{
+    let url = "https://spardhaa.herokuapp.com/organiser/forgot-password";
+    return this.http.post<any>(url,{id:Id,password:password});
+  }
 
 
 }

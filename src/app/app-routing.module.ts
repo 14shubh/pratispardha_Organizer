@@ -3,7 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './component/about/about.component';
 import { ContactComponent } from './component/contact/contact.component';
 import { EventUploadComponent } from './component/event-upload/event-upload.component';
+import { ForgotComponent } from './component/forgot/forgot.component';
 import { HomeComponent } from './component/home/home.component';
+import { NewpasswordComponent } from './component/newpassword/newpassword.component';
 import { SigninComponent } from './component/signin/signin.component';
 import { SignupComponent } from './component/signup/signup.component';
 import {AuthGuard} from './guard/auth.guard'
@@ -39,6 +41,13 @@ component:SignupComponent
 {
   path:'contact',
   component:ContactComponent,
+},
+{
+  path:'forgot-password',
+  component:ForgotComponent
+},{
+  path:'new-password/:id',
+  component:NewpasswordComponent
 }
 ];
 

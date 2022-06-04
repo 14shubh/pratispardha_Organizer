@@ -3,6 +3,7 @@
   */
   padding: 0;
   margin: 30px auto;
+  margin-top: 130px;
   text-align: center;
   justify-content: center;
   max-width: 550px;
@@ -118,5 +119,9 @@
   cursor: pointer;
   color: rgb(0, 117, 226);
   text-decoration: underline;
+}
+button:disabled,button[disabled]{
+  background-color: #cccccc;
+  cursor:not-allowed !important;
 }
 

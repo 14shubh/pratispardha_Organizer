@@ -8,7 +8,7 @@ import {Tournament} from '../model/tournament'
 })
 export class TournamentService {
   // url:string = "https://spardhaa.herokuapp.com/"
-  url:string = "http://localhost:3000/"
+  url:string = "https://spardhaa.herokuapp.com/"
   constructor(private http:HttpClient) { }
   public uploadTournament(fd:any): Observable<any> {
     let url = this.url+"tournament/tournament/upload-tournament";

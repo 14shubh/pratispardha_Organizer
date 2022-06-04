@@ -33,32 +33,38 @@
               <div class="input-area">
                   <div class="form-group">
                       <i class="fa-solid fa-user"></i>
-                      <input [(ngModel)]="user.name" type="text" name="name" id="name" class="form-control" placeholder="Name" aria-describedby="helpId">
-                      <!-- <small id="helpId" *ngIf="name.errors?.['required'] && name.touched">Please enter name</small> -->
+                      <input #name='ngModel' required pattern="^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$" [(ngModel)]="user.name" type="text" name="name" id="name" class="form-control" placeholder="Name" aria-describedby="helpId">
+                      <small id="helpId" *ngIf="name.errors?.['required'] && (name.touched||name.dirty)" >Please enter name</small>
+                      <small id="helpId" *ngIf="name.errors?.['pattern']"> Please Enter Valid Name</small>
                   </div>
                   <div class="form-group">
                       <i class="fa-solid fa-envelope"></i>
-                      <input [(ngModel)]="user.email" type="email" name="email" id="email" class="form-control" placeholder="Email" aria-describedby="helpId">
-                      <!-- <small id="helpId" *ngIf="email.errors?.['required'] && email.touched">Please enter email</small> -->
+                      <input [(ngModel)]="user.email" required pattern='[a-z0-9]+@[a-z]+\.[a-z]{2,3}' #email="ngModel" type="email" name="email" id="email" class="form-control" placeholder="Email" aria-describedby="helpId">
+                      <small id="helpId" *ngIf="email.errors?.['required'] && (email.touched||email.dirty)" >Please enter email</small>
+                      <small id="helpId" *ngIf="email.errors?.['pattern']">Please Enter Valid Email</small>
                   </div>
                   <div class="form-group">
                       <i class="fa-solid fa-unlock-keyhole"></i>
-                      <input [(ngModel)]="user.password" type="password" name="password" id="password" class="form-control" placeholder="Password" aria-describedby="helpId">
-                      <!-- <small id="helpId" *ngIf="pass.errors?.['required'] && pass.touched">Please enter password</small> -->
+                      <input [(ngModel)]="user.password" minlength="8" required #pass="ngModel" type="password" name="password" id="password" class="form-control" placeholder="Password" aria-describedby="helpId">
+                      <small id="helpId" *ngIf="pass.errors?.['required'] && (pass.touched||pass.dirty)" >Please enter password</small>
+                      <small id="helpId" *ngIf="pass.errors?.['minlength']&&(pass.touched||pass.dirty)">Password atleast 8 character long</small>
                   </div>
                   <div class="form-group">
                       <i class="fa-solid fa-mobile"></i>
-                      <input [(ngModel)]="user.mobile" type="phone" name="mobile" id="mobile" class="form-control" placeholder="Mobile" aria-describedby="helpId">
-                      <!-- <small id="helpId" *ngIf="mobile.errors?.['required'] && mobile.touched">Please enter mobile</small> -->
+                      <input [(ngModel)]="user.mobile" pattern="^[0-9]{10}$"  required #mobile="ngModel" type="phone" name="mobile" id="mobile" class="form-control" placeholder="Mobile" aria-describedby="helpId">
+                      <small  id="helpId" *ngIf="mobile.errors?.['required'] && mobile.touched" >Please enter mobile</small>
+                      <small *ngIf="mobile.errors?.['pattern']&&(mobile.touched||mobile.dirty)" id="helpId">Please Enter Valid Mobile Number</small>
                   </div>
                   <div class="form-group">
                       <i class="fa-solid fa-mobile"></i>
-                      <input type="phone" name="mobile" id="mobile" class="form-control" placeholder="Alternate Mobile" aria-describedby="helpId">
+                      <input #phone="ngModel" [(ngModel)]="user.alternateNumber" type="phone" name="mobile" id="mobile" class="form-control" placeholder="Alternate Mobile" aria-describedby="helpId">
+                      <small  id="helpId" *ngIf="phone.errors?.['required'] && phone.touched" >Please enter mobile</small>
+                      <small *ngIf="phone.errors?.['pattern']&&(phone.touched||phone.dirty)" id="helpId">Please Enter Valid Mobile Number</small>
                       <!-- <small id="helpId" *ngIf="mobile.errors?.['required'] && mobile.touched">Please enter mobile</small> -->
                   </div>
 
                   <div class="sign-up-btn">
-                      <a (click)="SignUp()" class=" sign-up">Sign Up</a>
+                      <button [disabled]="name.errors||email.errors||pass.errors||mobile.errors||phone.errors" (click)="SignUp()" class=" sign-up">Sign Up</button>
                   </div>
               </div>
               <div class="old-user">

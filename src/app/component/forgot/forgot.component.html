@@ -1,0 +1,38 @@
+<div *ngIf="status" class="forget ">
+    <div class="heading">
+        <h2>Reset Password</h2>
+    </div>
+    <div class="email">
+        <i class="fa-solid fa-circle-user"></i>
+ 
+        <p>Enter your email address below and we'll send you a link to reset your password</p>
+        <div class="form-group">
+           
+            <input required='' type="email" [(ngModel)]="email" pattern='[a-z0-9]+@[a-z]+\.[a-z]{2,3}' #Email="ngModel" class="form-control" id="email" name="email" autocomplete="off">
+            <label alt='Email' placeholder='Email...'></label>
+ 
+ 
+            <small style="color: red;" *ngIf="Email.errors?.['required']&&Email.touched"> Email is required</small>
+            <small style="color: red;" *ngIf="Email.errors?.['pattern']">Please Enter Valid Email</small>
+ 
+        </div>
+        <div  class="submit-btn">
+            <button [disabled]="Email.errors" style="border: none;" (click)="sendMail()" class="submit" [disabled]="false">Submit</button>
+        </div>
+    </div>
+</div>
+<div *ngIf="!status" class="forget">
+    <div class="heading">
+        <h2>Reset Password</h2>
+    </div>
+    <div class="email">
+        <i class="fa-solid fa-circle-user"></i>
+ 
+        <p>Check your inbox for the next steps. If you don't receive an email, and it's not in your spam folder this could mean you signed up with a different address.</p>
+       
+       
+    </div>
+</div>
+ 
+ 
+

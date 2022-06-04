@@ -16,19 +16,21 @@
               <div class="input-area">
                   <div class="form-group">
                       <i class="fa-solid fa-envelope"></i>
-                      <input type="email" required #email="ngModel" [(ngModel)]="user.email" name="email" id="email" class="form-control" placeholder="Email" aria-describedby="helpId" />
-                      <small id="helpId" *ngIf="email.errors?.['required'] && email.touched" class="text-muted">Please
-                        enter email</small>
+                      <input type="email" required pattern='[a-z0-9]+@[a-z]+\.[a-z]{2,3}' #email="ngModel" [(ngModel)]="user.email" name="email" id="email" class="form-control" placeholder="Email" aria-describedby="helpId" />
+                      <small id="helpId" *ngIf="email.errors?.['required'] && (email.touched||email.dirty)" >Please enter email</small>
+                      <small id="helpId" *ngIf="email.errors?.['pattern']">Please Enter Valid Email</small>
+                     
                   </div>
                   <div class="form-group">
                       <i class="fa-solid fa-unlock-keyhole"></i>
                       <input type="password" required #pass="ngModel" [(ngModel)]="user.password" name="password" id="password" class="form-control" placeholder="Password" aria-describedby="helpId" />
-                      <small id="helpId" *ngIf="pass.errors?.['required'] && pass.touched" class="text-muted">Please
-                        enter password</small>
+                      <small id="helpId" *ngIf="pass.errors?.['required'] && pass.touched" >Please enter password</small>
                   </div>
-
+                  <div class="forgot">
+                      <a  (click)="forgot()">Forget password ?</a>
+                  </div>
                   <div class="sign-up-btn">
-                      <a (click)="SignIn()" class="sign-up">Sign In</a>
+                      <button [disabled]="email.errors||pass.errors" (click)="SignIn()" class="sign-up">Sign In</button>
                   </div>
               </div>
               <div class="old-user">

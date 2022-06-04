@@ -15,6 +15,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { GoogleLoginProvider, SocialLoginModule } from 'angularx-social-login';
 import { ProfileComponent } from './component/profile/profile.component';
+import { ForgotComponent } from './component/forgot/forgot.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NewpasswordComponent } from './component/newpassword/newpassword.component';
 
 const socialProvider={
   provide:"SocialAuthServiceConfig",
@@ -39,7 +43,9 @@ const socialProvider={
     SignupComponent,
     FooterComponent,
     NavbarComponent,
-    ProfileComponent
+    ProfileComponent,
+    ForgotComponent,
+    NewpasswordComponent
   ],
   imports: [
 
@@ -47,7 +53,9 @@ BrowserModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     SocialLoginModule,
+     ToastrModule.forRoot()
 
 
 
