@@ -1,5 +1,7 @@
- 
- 
+.carousel{
+    margin-top: 56px;
+}
+
 .carousel-inner .carousel-item .banner-content{
     position: absolute;
     top: 50%;
@@ -30,7 +32,7 @@
 .event-title{
     margin-top:110px;
     position: relative;
-    width:fit-content;
+    width:fit-content; 
 }
 .event-title h2{
     font-size: 26px;
@@ -38,17 +40,17 @@
 }
 .event-title .underline{
     position: absolute;
-    width: 160px;
+    width: 295px;
     height:2px;
     background: rgba(78, 78, 78, 0.505);
     /* left: 10px; */
 }
 .event-title .fa-arrow-right{
     position: absolute;
-    left: 140px;
+    left: 270px;
     top: 10px;
 }
- 
+
 .sub-hero .evets{
     padding: 15px 0 30px 0;
     /* margin: 20px 0 0 0 ; */
@@ -64,7 +66,7 @@
     -moz-border-radius: 5px !important;
     -ms-border-radius: 5px !important;
     -o-border-radius: 5px !important;
-   
+    
 }
 .event-card .card-content .card-img{
     height:200px;
@@ -96,7 +98,7 @@
     font-size: 15px;
     font-weight:600;
     color: rgb(42, 42, 42);
-   
+    
 }
 .event-card .card-content .primary-text .read_more{
     background:var(--blue-radial-gradient);
@@ -105,7 +107,7 @@
     border-radius: 3px;
     font-size: 12px;
 }
- 
+
 .event-card .card-content .overlay-box {
     position: absolute;
     top: 0;
@@ -131,11 +133,12 @@
 .event-card .card-content:hover .overlay-box {
     opacity: 1;
 }
- 
- 
+
+
 .event-card .card-content .overlay-box .overlay-content h3{
     margin-bottom:10px;
     font-size: 18px;
+    text-transform: capitalize;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -144,7 +147,7 @@
     overflow: hidden;
     margin-left: 35px;
 }
- 
+
 .event-card .card-content .overlay-box .overlay-content .date h3 i,.event-card .card-content .overlay-box .overlay-content .organiser h3 i,.event-card .card-content .overlay-box .overlay-content .location h3 i{
     font-size: 17px;
     margin-right: 12px;
@@ -194,12 +197,14 @@
 .event-card .card-content .overlay-box .overlay-btn a:hover::before{
     width: 100%;
 }
- 
+
 .view-all{
     padding: 5px 0;
-    width: fit-content;
+    /* display:inline; */
     margin:20px auto;
     position: relative;
+    width: fit-content;
+    /* background: #00305A; */
 }
 .view-all .view-text{
     font-size:16px;
@@ -208,7 +213,7 @@
     text-shadow: 0 2px 4px rgba(194, 194, 194, 0.24);
     cursor: pointer;
 }
- 
+
 .view-all .view-all-border{
     position: absolute;
     width: 100%;
@@ -237,14 +242,14 @@
     -ms-transform: translateX(7px) scale(1.3);
     -o-transform: translateX(7px) scale(1.3);
 }
- 
- 
- 
- 
- 
+
+
+
+
+
 /* Story section style */
- 
- 
+
+
 .story-section .story{
    padding: 80px 0
 }
@@ -272,9 +277,9 @@
     letter-spacing: 1px;
     line-height: 30px;
 }
- 
+
 /* second story row style */
- 
+
 .story-section .story_2{
     margin-bottom: 80px ;
 }
@@ -302,7 +307,7 @@
     letter-spacing: 1px;
     line-height: 30px;
 }
- 
+
 @media screen and (min-width:1200px) and (max-width:1400px) {
     .event-card .card-content .card-body{
         padding: 10px;
@@ -312,14 +317,14 @@
     }
     .event-card .card-content .primary-text span{
         font-size: 13px;
-       
+        
     }
     .event-card .card-content .overlay-box .overlay-content h3{
         font-size: 15px;
     }
     .event-card .card-content .overlay-box .overlay-content .date span, .event-card .card-content .overlay-box .overlay-content .organiser  span, .event-card .card-content .overlay-box .overlay-content .location span{
-       
-        font-size: 12px;
+        
+        font-size: 11px;
     }
     .event-card .card-content .overlay-box .overlay-btn a{
         font-size: 12px;
@@ -328,7 +333,7 @@
     .heading{
         margin: 50px auto;
     }
-   
+    
     .story{
         padding: 50px 0 !important;
     }
@@ -337,9 +342,9 @@
     }
     .story-section .story .right .story-title h1, .story-section .story_2 .left .story-title h1{
         font-size:28px;
-       
+        
     }
-   
+    
     .story-section .story .right .story-body p, .story-section .story_2 .left .story-body p{
         font-size:13px;
         line-height: 25px;
@@ -347,34 +352,33 @@
     .story-section .story_2 .right .story-img{
         height: 100%;
     }
- 
+
 }
 @media screen and (min-width:992px) and (max-width:1199px) {
     .event-card .card-content .card-body{
         padding: 10px;
     }
     .event-card .card-content .primary-text h3{
-        font-size: 15px;
+        font-size: 24px;
     }
     .event-card .card-content .primary-text span{
         font-size: 10px;
-       
+        
     }
     .event-card .card-content .overlay-box{
-        padding: 10px 8px;
+        padding: 35px 15px;
     }
     .event-card .card-content .overlay-box .overlay-content h3{
-        font-size: 12px;
+        font-size: 18px;
     }
     .event-card .card-content .overlay-box .overlay-content .date span, .event-card .card-content .overlay-box .overlay-content .organiser  span, .event-card .card-content .overlay-box .overlay-content .location span{
-       
-        font-size: 10px;
+        font-size: 13px;
     }
     .event-card .card-content .overlay-box .overlay-btn{
         margin-top: 30px;
     }
     .event-card .card-content .overlay-box .overlay-btn a{
-        font-size: 10px;
+        font-size: 13px;
         padding: 5px 14px;
     }
     .heading{
@@ -399,18 +403,18 @@
     .story-section .story_2 .right .story-img, .story-section .story .left .story-img{
         height: 100%;
     }
-   
+    
 }
- 
+
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .carousel-inner .carousel-item .banner-content h1{
         font-size: 28px;
     }
     .carousel-inner .carousel-item .banner-content span{
-        font-size: 15px;
+        font-size: 15px; 
     }
     .evets {
-        padding: 0 !important;  
+        padding: 0 !important;   
     }
     .evets .event-card{
         padding: 20px 10px;
@@ -421,7 +425,7 @@
     .event-card .card-content .overlay-box{
         padding: 35px 15px 20px 15px;
     }
-   
+    
     .event-card .card-content .overlay-box .overlay-content h3{
         font-size: 20px;
     }
@@ -431,7 +435,7 @@
     .event-card .card-content .overlay-box .overlay-content .organiser{
         margin: 40px 0;
     }
-   
+    
     .event-card .card-content .overlay-box .overlay-btn{
         margin-top: 50px;
     }
@@ -461,7 +465,7 @@
         font-size: 24px;
     }
     .carousel-inner .carousel-item .banner-content span{
-        font-size: 13px;
+        font-size: 13px; 
     }
     .evets .event-card{
         padding: 20px 10px;
@@ -474,7 +478,7 @@
     }
     .event-card .card-content .primary-text span{
         font-size: 12px;
-       
+        
     }
     .event-card .card-content .overlay-box .overlay-content h3{
         font-size: 16px;
@@ -487,7 +491,7 @@
         font-size: 12px;
         padding: 5px 14px;
     }
- 
+
     .story-section .story{
         padding: 50px 0 !important;
     }
@@ -515,72 +519,101 @@
         line-height: 25px;
     }
 }
- 
-@media only screen and (min-width:320px) and (max-width: 567px) {
+
+@media only screen and (max-width: 567px) {
+    .carousel-indicators button{
+        width: 15px;
+        height: 1px;
+    }
+    .slide .carousel-control-prev .carousel-control-prev-icon, .slide .carousel-control-next .carousel-control-next-icon{
+        height: 15px;
+    }
+    .carousel-indicators{
+        margin-bottom: 0;
+    }
+    .carousel-inner{
+        height: 30vh;
+    }
     .carousel-inner .carousel-item{
+        height: 100%;
         padding: 0;
+    }
+    .carousel-inner .carousel-item img{
+        height: 100%;
     }
     .carousel-inner .carousel-item .banner-content{
         width: 80%;
         padding: 20px;
     }
     .carousel-inner .carousel-item .banner-content h1{
-        font-size: 14px;
+        font-size: 12px;
         margin-bottom: 10px;
         font-weight: 400;
     }
     .carousel-inner .carousel-item .banner-content span{
-        font-size: 10px;
+        font-size: 8px;
         margin: 0;
     }
-    .carousel-indicators{
-        margin-bottom: 0;
-    }
- 
+
     .heading h1{
-        font-size:24px;
+        font-size:20px;
     }
- 
+
     .event-title{
         padding:0 20px;
     }
     .event-title h2{
-        font-size: 20px;
-        /* text-shadow: 0 5px 4px rgba(194, 194, 194, 0.24); */
+        font-size: 16px;
     }
     .event-title .underline{
-        width: 225px;
+        width: 185px;
     }
     .event-title .fa-arrow-right{
-        top: 5px;
-        left: 225px;
+        top: 4px;
+        left: 190px;
+        font-size: 14px;
     }
- 
+
     .evets {
-        padding: 0 !important;  
+        padding: 0 !important;   
     }
     .evets .event-card{
         padding: 20px 30px;
     }
     .event-card .card-content .primary-text h3{
-        font-size: 25px;
+        font-size: 18px;
+    }
+    .event-card .card-content .primary-text h3 span{
+        font-size: 14px;
     }
     .event-card .card-content .overlay-box{
-        padding: 45px 25px 20px 25px;
+        padding: 45px 15px 30px 15px;
     }
-   
+    
     .event-card .card-content .overlay-box .overlay-content h3{
-        font-size: 24px;
+        font-size: 16px;
     }
     .event-card .card-content .overlay-box .overlay-content .date span, .event-card .card-content .overlay-box .overlay-content .organiser  span, .event-card .card-content .overlay-box .overlay-content .location span{
-        font-size: 18px;
+        font-size: 12px;
     }
     .event-card .card-content .overlay-box .overlay-content .organiser{
         margin: 50px 0;
     }
-   
+    
     .event-card .card-content .overlay-box .overlay-btn{
-        margin-top: 50px;
+        margin-top: 30px;
+    }
+    .event-card .card-content .overlay-box .overlay-btn a{
+        padding:5px 10px;
+        font-size:12px;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -ms-border-radius: 3px;
+        -o-border-radius: 3px;
+}
+    .view-all{
+        margin:20px auto;
     }
     .story-section .story{
         padding: 50px 0 !important;
@@ -609,6 +642,4 @@
         line-height: 25px;
     }
 }
- 
- 
 

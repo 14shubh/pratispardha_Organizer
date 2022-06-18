@@ -19,6 +19,8 @@ import { ForgotComponent } from './component/forgot/forgot.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NewpasswordComponent } from './component/newpassword/newpassword.component';
+import { DetailComponent } from './component/detail/detail.component';
+
 
 const socialProvider={
   provide:"SocialAuthServiceConfig",
@@ -45,7 +47,9 @@ const socialProvider={
     NavbarComponent,
     ProfileComponent,
     ForgotComponent,
-    NewpasswordComponent
+    NewpasswordComponent,
+    DetailComponent,
+   
   ],
   imports: [
 

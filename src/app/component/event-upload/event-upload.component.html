@@ -4,52 +4,89 @@
   </div>
   <div class="event-details">
       <div class="form-group">
-          <input [(ngModel)]="tournament.tournamentName" type="text" placeholder="Event Name" class="form-control">
+          <input #name="ngModel" required [(ngModel)]="tournament.tournamentName" type="text" placeholder="Event Name" class="form-control">
+          <small *ngIf="name.errors?.['required']&&(name.touched||name.dirty)" id="helpId"> Tournament name is required</small>
       </div>
       <div class="form-group">
-          <input [(ngModel)]="tournament.tournamentAddress" type="text" placeholder="Address" class="form-control">
+          <input #add="ngModel" required [(ngModel)]="tournament.tournamentAddress" type="text" placeholder="Address" class="form-control">
+          <small *ngIf="add.errors?.['required']&&(add.touched||add.dirty)" id="helpId">Tournament address is required</small>
       </div>
       <div class="form-group">
-          <input [(ngModel)]="tournament.tournamentTeamLimit" type="number" placeholder="Team limit" class="form-control">
+          <input #lim="ngModel" required min="15" [(ngModel)]="tournament.tournamentTeamLimit" type="number"  placeholder="Team limit" class="form-control">
+                      <small *ngIf="lim.errors?.['required']&&(lim.touched||lim.dirty)" id="helpId">Tournament team limit is required</small>
+                      <small *ngIf="lim.errors?.['min']&&(lim.touched||lim.dirty)" id="helpId">Minimum 15 team is required</small>
+                  
       </div>
       <div class="form-group start-date">
           <h3>Start Date</h3>
 
-          <input [(ngModel)]="tournament.tournamentStartDate" type="date" class="form-control">
+          <input  #date1="ngModel"  id="start"    required [(ngModel)]="tournament.tournamentStartDate" type="date" class="form-control">
+          <small *ngIf="date1.errors?.['required']&&(date1.touched||date1.dirty||flag)" id="helpId"> Tournament date is required</small>
+          <small *ngIf=" (startDate(date1.value)==2)&&(date1.touched||date1.dirty)" id="helpId">Your Tournament must be uploaded before 1 week of start</small>
+          <small *ngIf=" (startDate(date1.value)==1)&&(date1.touched||date1.dirty)" id="helpId">Sorry it is previous date</small>
+          
+          
+          
       </div>
-      <div class="form-group apply-date">
-          <h3>Apply Date</h3>
-
-          <input [(ngModel)]="tournament.tournamentApplyDate" type="date" class="form-control">
-      </div>
-      <div class="form-group end-date">
+      <div (click)="notClick()"  class="form-group apply-date">
+       <h3  >Apply Date</h3>
+          <input  
+          [disabled]="date1.errors?.['required']||(startDate(date1.value)==2)||(startDate(date1.value)==1)"
+          #date2="ngModel"required  [(ngModel)]="tournament.tournamentApplyDate" type="date" class="form-control">
+          <small *ngIf="date2.errors?.['required']&&(date2.touched||date2.dirty)" id="helpId"> Tournament Ragistration start date is required</small>
+          <small *ngIf="applyDate(date2.value)==1&&(date2.dirty||date2.touched)" id="helpId">Sorry it is previous date</small>
+          <small *ngIf="canApply(date1.value,date2.value)&&(date2.dirty||date2.touched)" id="helpId">Ragistration start date is same or bigger to tournament date</small>
+           
+        </div>
+      <div (click)="notClick()" class="form-group end-date">
           <h3>End Date</h3>
 
-          <input [(ngModel)]="tournament.tournamentEndDate" type="date" class="form-control">
-      </div>
+          <input  
+          [disabled]="date1.errors?.['required']||(startDate(date1.value)==2)||(startDate(date1.value)==1)||date2.errors?.['required']||applyDate(date2.value)==1||canApply(date1.value,date2.value)"
+          #date3="ngModel" required [(ngModel)]="tournament.tournamentEndDate" type="date" class="form-control">
+          <small *ngIf="date3.errors?.['required']&&(date3.dirty||date3.touched)" id="helpId">Ragistration End date is required</small>
+          <small *ngIf="EndDate(date3.value)==1&&(date3.dirty||date3.touched)" id="helpId">Sorry it is previous date</small>
+        <small *ngIf="canEnd(date1.value,date2.value,date3.value)==1&&(date3.touched||date3.dirty)" id="helpId">Ended date can not bigger to tournament date</small>
+        <small *ngIf="canEnd(date1.value,date2.value,date3.value)==2&&(date3.touched||date3.dirty)" id="helpId">Ended date can not smaller to ragistration apply date </small>
+      
+    </div>
 
       <div class="form-group">
-          <input [(ngModel)]="tournament.tournamentFees" type="text" placeholder="Fess" class="form-control">
+          <input #fees="ngModel" required [(ngModel)]="tournament.tournamentFees" type="text" placeholder="Fess" class="form-control">
+          <small *ngIf="fees.errors?.['required']&&(fees.touched||fees.dirty)" id="helpId">Tournament fees is required</small>
       </div>
       <div class="form-group">
-          <input [(ngModel)]="tournament.firstPrize" type="text" placeholder="First Prize" class="form-control">
+          <input #p1='ngModel' required [(ngModel)]="tournament.firstPrize" type="text" placeholder="First Prize" class="form-control">
+          <small *ngIf="p1.errors?.['required']&&(p1.touched||p1.dirty)"  id="helpId">First prize is required</small>
       </div>
       <div class="form-group">
-          <input [(ngModel)]="tournament.secondPrize" type="text" placeholder="Second Prize" class="form-control">
-      </div>
+          <input #p2 ='ngModel' required [(ngModel)]="tournament.secondPrize" type="text" placeholder="Second Prize" class="form-control">
+          <small *ngIf="p2.errors?.['required']&&(p2.touched||p2.dirty)"  id="helpId">Second prize is required</small>
+        </div>
       <div class="form-group">
-          <input [(ngModel)]="tournament.thirdPrize" type="text" placeholder="Third Prize" class="form-control">
-      </div>
+          <input #p3='ngModel' required [(ngModel)]="tournament.thirdPrize" type="text" placeholder="Third Prize" class="form-control">
+          <small *ngIf="p3.errors?.['required']&&(p3.touched||p3.dirty)"  id="helpId">Third prize is required</small> 
+        </div>
       <div class="form-group start-date">
-          <textarea [(ngModel)]="tournament.tournamentRules" name="rules" id="rules" cols="30" rows="10" placeholder="Rules" class="form-control"></textarea>
+          <textarea #text="ngModel"  required [(ngModel)]="tournament.tournamentRules" name="rules" id="rules" cols="30" rows="10" placeholder="Rules" class="form-control"></textarea>
+          <small *ngIf="text.errors?.['required']&&(text.dirty||text.touched)" id="helpId">Rules are required</small>
       </div>
       <div class="form-group">
-          <input (change)="select($event)" type="file" class="form-control">
+          <input required #banner="ngModel" ngModel (change)="select($event)" type="file" class="form-control">
+          <small *ngIf="banner.errors?.['required']&&(banner.touched||banner.dirty)" id="helpId">Tournament banner is required</small>
       </div>
 
       <div class="buttons">
-          <a class="btn btn-outline-danger">Cancel</a>
-          <a class="btn btn-outline-primary" (click)="uploadTournament()">Upload</a>
+          <button  class="btn btn-outline-danger mx-1">Cancel</button>
+          <button
+          [disabled]="name.errors||
+          add.errors||lim.errors||date1.errors||date2.errors||date3.errors||(startDate(date1.value)==1)
+          ||(startDate(date1.value)==2)||applyDate(date2.value)==1||canApply(date1.value,date2.value)
+
+||EndDate(date3.value)==1||canEnd(date1.value,date2.value,date3.value)==1||canEnd(date1.value,date2.value,date3.value)==2
+||fees.errors||p1.errors||p2.errors||p3.errors||text.errors||banner.errors              
+          "
+          class="btn btn-outline-primary mx-1" (click)="uploadTournament()">Upload</button>
       </div>
   </div>
 </div>

@@ -1,50 +1,55 @@
-<div class="container mt-3">
-    <div class="heading">
-      <h1>contact us</h1>
-      <span class="border"></span>
-    </div>
-    <div class="row box">
-      <div class="col-md-3 content_box contact_data">
-        <div class="title">
-          <h2>Pratispardha</h2>
-        </div>
-        <div class="links">
-          <ul class="footer-links">
-            <li class="footer-list"><i class="fas fa-location-arrow  "></i> 4th Flore BCM Heights,indore</li>
-            <li class="footer-list"><i class="fa fa-mobile" aria-hidden="true"></i> +91 8319238671</li>
-            <li class="footer-list"><i class="fas fa-mail-bulk    "></i>pratispardha.22@gmail.com</li>
-          </ul>
-        </div>
+<div class="container mt-3 contact">
+  <div class="heading">
+    <h1>contact us</h1>
+    <span class="border"></span>
+  </div>
+  <div class="row box">
+    <div class="col-md-3 content_box contact_data">
+      <div class="title">
+        <h2>Pratispardha</h2>
       </div>
-   
-      <div class="col-md-9 right">
-        <div class="input-area">
-          <div class="name-mobile input-data">
-            <div class="form-group name">
-              <i class="fa-solid fa-user"></i>
-              <input [(ngModel)]="name" type="text" class="form-control" id="name" placeholder="Name">
-            </div>
-            <div class="form-group input-data mobile">
-              <i class="fa-solid fa-mobile"></i>
-              <input [(ngModel)]="mobile" type="text" class="form-control" placeholder="Mobile">
-            </div>
+      <div class="links">
+        <ul class="footer-links">
+          <li class="footer-list"><i class="fas fa-location-arrow  "></i> 4th Flore BCM Heights,indore</li>
+          <li class="footer-list"><i class="fa fa-mobile" aria-hidden="true"></i> +91 8319238671</li>
+          <li class="footer-list"><i class="fas fa-mail-bulk    "></i>pratispardha.22@gmail.com</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-9 right">
+      <div class="input-area">
+        <div class="name-mobile input-data">
+          <div class="form-group name">
+            <i class="fa-solid fa-user"></i>
+            <input [(ngModel)]="name" pattern="^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$" required #Name="ngModel" type="text" class="form-control" id="name" placeholder="Name">
+           <small id="helpId"   *ngIf="Name.errors?.['required']&&(Name.touched||Name.dirty)" >Name is required</small>
+           <small id="helpId" *ngIf="Name.errors?.['pattern']&&(Name.touched||Name.dirty)">Please Enter Valid Name</small>
           </div>
-          <div class="form-group input-data email">
-            <i class="fa-solid fa-envelope"></i>
-            <input [(ngModel)]="email" type="text" class="form-control" placeholder="Email">
+          <div class="form-group input-data mobile">
+            <i class="fa-solid fa-mobile"></i>
+            <input #Mobile="ngModel" pattern="^[0-9]{10}$"  required [(ngModel)]="mobile" type="text" class="form-control" placeholder="Mobile">
+            <small *ngIf="Mobile.errors?.['required']&&(Mobile.touched||Mobile.dirty)"  id="helpId">Mobile number is required</small>
+            <small *ngIf="Mobile.errors?.['pattern']&&(Mobile.touched||Mobile.dirty)" id="helpId">Please enter valid mobile number</small>
           </div>
-          <div class="form-group textbox input-data">
-            <textarea [(ngModel)]="query" class="form-control" rows="7" placeholder="Write your message here"></textarea>
+        </div>
+        <div class="form-group input-data email">
+          <i class="fa-solid fa-envelope"></i>
+          <input #Email="ngModel" pattern='[a-z0-9]+@[a-z]+\.[a-z]{2,3}' required [(ngModel)]="email" type="text" class="form-control" placeholder="Email">
+           <small id="helpId"*ngIf="Email.errors?.['required']&&(Email.touched||Email.dirty)" >Email is required</small>
+            <small id="helpId"*ngIf="Email.errors?.['pattern']&&(Email.touched||Email.dirty)" >Please enter valid email</small>
           </div>
-          <div (click)="save()" class="send-btn">
-            <a  class="btn btn-outline-primary send">Send</a>
+        <div class="form-group textbox input-data">
+          <textarea #text="ngModel" required minlength="50" [(ngModel)]="query" class="form-control" rows="7" placeholder="Write your message here"></textarea>
+           <small id="helpId" *ngIf="text.errors?.['required']&&(text.touched||text.dirty)">Message is required</small>
+            <small id="helpId" *ngIf="text.errors?.['minlength']&&(text.touched||text.dirty)">Message atleast 50 character long.</small>
           </div>
+        <div  class="send-btn ">
+          <button class="btn btn-outline-primary send"  (click)="save()" [disabled]="Name.errors||Email.errors||Mobile.errors||text.errors" >Send</button >
         </div>
       </div>
     </div>
   </div>
-   
-   
-   
-  
-  
+</div>
+
+

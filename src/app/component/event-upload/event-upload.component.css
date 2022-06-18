@@ -1,3 +1,6 @@
+#helpId{
+    color: red;
+}
 .upload {
     padding: 50px 0 0 0;
 }
@@ -57,4 +60,11 @@
     font-family: latto;
     text-align: left;
 }
-
+button:disabled,button[disabled]{
+    background-color: #cccccc;
+    cursor:not-allowed !important;
+  }
+  
+  input:disabled,input[disabled]{
+      
+  }

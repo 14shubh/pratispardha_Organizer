@@ -1,93 +1,221 @@
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="../../../assets/images/banner.png" class="d-block w-100 fluid-img" alt="slider image">
-        <div class="banner-content">
-            <h1>Cricket tournaments</h1>
-            <span>“You don’t play for the crowd. You play for the country.”</span>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="../../../assets/images/banner_2.png" class="d-block w-100 fluid-img" alt="slider image">
-       
-      </div>
-      <div class="carousel-item">
-        <img src="../../../assets/images/home_banner.png" class="d-block w-100 fluid-img" alt="slider image">
-        <div class="banner-content">
-            <h1>Cricket tournaments</h1>
-            <span>“You don’t play for the crowd. You play for the country.”</span>
-        </div>
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+
+
+<div class="container sub-hero">
+   <div class="heading">
+       <h1>Your Uploaded Tournaments</h1>
+       <span class="border"></span>
+   </div>
+   <div class="event-title">
+    <h2>Live Events</h2>
+    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+    <span class="underline"></span>
   </div>
- 
- <div class="container sub-hero">
-     <div class="heading">
-         <h1>Uploaded Events</h1>
-         <span class="border"></span>
-     </div>
-     <div class="event-title">
-      <h2>All Events</h2>
-      <i class="fa fa-arrow-right" aria-hidden="true"></i>
-      <span class="underline"></span>
-    </div>
-     <div class="row evets">
-     
-         <div class="col-sm-6 col-md-6 col-lg-3 event-card" *ngFor="let Event of event">
-          <div class="card card-content" >
-            <div class="card-img">
-              <img src="{{Event.banner}}" class="card-img-top" alt="...">
-            </div>
-            <div class="card-body">
-              <div class="primary-text">
-                <h3>Event : <span>{{Event.tournamentName}}</span></h3>
-                <span class="read_more">
-                  read more
-                </span>
-              </div>
-            </div>
-            <div class="overlay-box">
-              <div class="overlay-content">
-                <div class="date">
-                 
-                  <h3><i class="fa fa-calendar" aria-hidden="true"></i> Registration date</h3>
-                  <span>Start: {{Event.tournamentApplyDate | date:'dd-MM-yyyy'}} | End: {{Event.tournamentEndDate | date:'dd-MM-yyyy'}}</span>
-                </div>
-                <div class="organiser">
-                 
-                  <h3><i class="fas fa-user-tie"></i> organiser : <span>{{Event.orgainiserId.name}}</span></h3>
-                </div>
-                <div class="location">
-                 
-                  <h3> <i class="fa fa-location-arrow" aria-hidden="true"></i> Venue : <span>{{Event.tournamentAddress}}</span></h3>
-                </div>
-              </div>
-              <div class="overlay-btn">
-                <a class="read-more-btn"  (click)="read(Event._id)">Read More</a>
-                <!-- <a class="register-btn">Register</a> -->
-              </div>
+   <div class="row evets">
+    
+       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 event-card" *ngFor="let Event of live">
+        <div class="card card-content" >
+          <div class="card-img">
+            <img src="{{Event.banner}}" class="card-img-top" alt="...">
+          </div>
+          <div class="card-body">
+            <div class="primary-text">
+              <h3>Event : <span>{{Event.tournamentName}}</span></h3>
+              <span class="read_more">
+                read more
+              </span>
             </div>
           </div>
-         </div>
-     </div>
-     <div class="view-all text-center">
-       <span class="view-text">View All</span>
-       <i class="fa-solid fa-angle-right" id="arrow-icon"></i>
-       <span class="view-all-border"></span>
-     </div>
- </div>
- 
+          <div class="overlay-box">
+            <div class="overlay-content">
+              <div class="date">
+                
+                <h3><i class="fa fa-calendar" aria-hidden="true"></i> Registration date</h3>
+                <span>Start: {{Event.tournamentApplyDate | date:'dd-MM-yyyy'}} | End: {{Event.tournamentEndDate | date:'dd-MM-yyyy'}}</span>
+              </div>
+              <div class="organiser">
+                
+                <h3><i class="fas fa-user-tie"></i> organiser : <span>{{Event.orgainiserId.name}}</span></h3>
+              </div>
+              <div class="location">
+                
+                <h3> <i class="fa fa-location-arrow" aria-hidden="true"></i> Venue : <span>{{Event.tournamentAddress}}</span></h3>
+              </div>
+            </div>
+            <div class="overlay-btn">
+              <a (click)="detail(Event._id)" class="read-more-btn">Read More</a>
+  
+            </div>
+          </div>
+        </div>
+       </div>
+   </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <div class="event-title">
+    <h2>Upcomming Events</h2>
+    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+    <span class="underline"></span>
+  </div>
+   <div class="row evets">
+    
+       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 event-card" *ngFor="let Event of upcoming">
+        <div class="card card-content" >
+          <div class="card-img">
+            <img src="{{Event.banner}}" class="card-img-top" alt="...">
+          </div>
+          <div class="card-body">
+            <div class="primary-text">
+              <h3>Event : <span>{{Event.tournamentName}}</span></h3>
+              <span class="read_more">
+                read more
+              </span>
+            </div>
+          </div>
+          <div class="overlay-box">
+            <div class="overlay-content">
+              <div class="date">
+                
+                <h3><i class="fa fa-calendar" aria-hidden="true"></i> Registration date</h3>
+                <span>Start: {{Event.tournamentApplyDate | date:'dd-MM-yyyy'}} | End: {{Event.tournamentEndDate | date:'dd-MM-yyyy'}}</span>
+              </div>
+              <div class="organiser">
+                
+                <h3><i class="fas fa-user-tie"></i> organiser : <span>{{Event.orgainiserId.name}}</span></h3>
+              </div>
+              <div class="location">
+                
+                <h3> <i class="fa fa-location-arrow" aria-hidden="true"></i> Venue : <span>{{Event.tournamentAddress}}</span></h3>
+              </div>
+            </div>
+            <div class="overlay-btn">
+              <a (click)="detail(Event._id)" class="read-more-btn">Read More</a>
+            
+            </div>
+          </div>
+        </div>
+       </div>
+   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <div class="event-title">
+    <h2>Ended Events</h2>
+    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+    <span class="underline"></span>
+  </div>
+   <div class="row evets">
+    
+       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 event-card" *ngFor="let Event of ended">
+        <div class="card card-content" >
+          <div class="card-img">
+            <img src="{{Event.banner}}" class="card-img-top" alt="...">
+          </div>
+          <div class="card-body">
+            <div class="primary-text">
+              <h3>Event : <span>{{Event.tournamentName}}</span></h3>
+              <span class="read_more">
+                read more
+              </span>
+            </div>
+          </div>
+          <div class="overlay-box">
+            <div class="overlay-content">
+              <div class="date">
+                
+                <h3><i class="fa fa-calendar" aria-hidden="true"></i> Registration date</h3>
+                <span>Start: {{Event.tournamentApplyDate | date:'dd-MM-yyyy'}} | End: {{Event.tournamentEndDate | date:'dd-MM-yyyy'}}</span>
+              </div>
+              <div class="organiser">
+                
+                <h3><i class="fas fa-user-tie"></i> organiser : <span>{{Event.orgainiserId.name}}</span></h3>
+              </div>
+              <div class="location">
+                
+                <h3> <i class="fa fa-location-arrow" aria-hidden="true"></i> Venue : <span>{{Event.tournamentAddress}}</span></h3>
+              </div>
+            </div>
+            <div class="overlay-btn">
+              <a (click)="detail(Event._id)" class="read-more-btn">Read More</a>
+             
+            </div>
+          </div>
+        </div>
+       </div>
+   </div>
+   
+</div> 

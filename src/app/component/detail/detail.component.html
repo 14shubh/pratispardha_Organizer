@@ -1,0 +1,114 @@
+<div class="container event-wrapper">
+    <div class="row event-data">
+      <div class="col-md-6 left">
+        <div class="event-image">
+          <img src="{{event.banner}}" alt="event image" class="img-fluid" />
+        </div>
+      </div>
+      <div class="col-md-6 right">
+        <div class="event-details">
+          <div class="event-title">
+            <h2>{{event.tournamentName}}</h2>
+          </div>
+          <div class="event-content event">
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+  
+            <div class="event-date">
+              <p>Registration date</p>
+              <p>Start: <span>{{event.tournamentApplyDate|date:'dd-MM-yyyy'}} | End:{{event.tournamentEndDate|date:'dd-MM-yyyy'}}</span></p>
+  
+            </div>
+          </div>
+          <div class="tournament-date event">
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+            <p>Tournament date :<span>{{event.tournamentStartDate|date:'dd-MM-yyyy'}}</span></p>
+          </div>
+          <div class="event-orgnizer event">
+            <i class="fas fa-user-tie"></i>
+            <p>organiser : <span>{{event.orgainiserId.name}}</span></p>
+          </div>
+          <div class="location event">
+            <i class="fa fa-location-arrow" aria-hidden="true"></i>
+            <p>Venue : <span>{{event.tournamentAddress}}</span></p>
+          </div>
+          <span class="note">each team will pay {{event.tournamentFees}}/- as participating fee.</span>
+        </div>
+  
+       
+      </div>
+    </div>
+    <div class="border"></div>
+  
+    <div class="other-info">
+      <div class="about-event event-info">
+        <div class="info-heading">
+          <h3>About Event</h3>
+        </div>
+        <div class="content">
+          <span>
+            India is a country where Cricket is one of the most accepted and
+            played sports. There are many international as well as domestic
+            cricket matches that are played in this country.
+          </span>
+        </div>
+      </div>
+      <div class="event-rules event-info">
+        <div class="info-heading">
+          <h3>Event Rules</h3>
+        </div>
+        <div class="content">
+          <span>
+            1. Documents of all the players of the team should be compulsorily
+            submitted.<br>
+            2. If any kind of indiscipline is found in the tournament then
+            that player will be immediately expelled from the tournament.<br>
+            3. It is mandatory for all the players of the team to report on the field 1
+            hour before the match. <br>
+            4. During the tournament, if any player is found
+            to be doing any kind of undesirable activity or consuming drugs, he
+            will be immediately expelled from the tournament.<br>
+            5. All players take care of their own belongings Sports complex does not take
+            responsibility for this.
+          </span>
+        </div>
+      </div>
+  
+      <div class="event-prize event-info">
+        <div class="info-heading">
+          <h3>Winnig Prize</h3>
+        </div>
+        <div class="content">
+          <span>
+            1. winning team : cash prize ₹ {{event.firstPrize}}/- and designer trophy.<br>
+            2. Runner’s team : cash prize ₹ {{event.secondPrize}}/- and designer trophy.<br>
+            3. Semi finalist : cash prize ₹ {{event.thirdPrize}}/- and Designer trophy. <br>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container myDiv">
+      <h3>Ragistered Teams</h3>
+  </div>
+
+<div class="container ">
+    <table class="table ">
+        <tr>
+            <th>S.no</th>
+            <th>Team Name</th>
+            <th>Team Owner Name</th>
+            <th>Email Id</th>
+            <th>Contact Number</th>
+           
+        </tr>
+        <tr *ngFor="let team of teams index as i">
+            <td>{{i+1}}</td>
+            <td>{{team.name}}</td>
+            <td>{{team.ownerId.name}}</td>
+            <td>{{team.ownerId.email}}</td>
+            <td>{{team.ownerId.mobile}}</td>
+          
+    
+        </tr>
+    </table>
+    </div>

@@ -1,0 +1,145 @@
+.myDiv{
+    padding: 10px,0;
+    text-align: center;
+    
+     
+}
+.myDiv h3{
+    margin-bottom: 30px;
+}
+
+table,td,th{
+    border: 1px solid black;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+td,th{
+    padding:10px
+}
+table{
+    margin-top: 10px;
+}
+
+.event-wrapper{
+    padding: 80px 0;
+}
+.left, .right, .other-info {
+    padding: 20px 50px;
+}
+.left .event-image{
+    max-height:500px;
+    height:100%;
+    width:100%;
+}
+.left .event-image img{
+    width: 100%;
+    height: 100%;
+    border-radius:3px;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    -ms-border-radius:3px;
+    -o-border-radius:3px;
+}
+
+.right .event-details{
+    padding:15px 0;
+}
+/* .right .event-details .event-title{
+    margin: 20px 0;
+} */
+.right .event-details .event-title h2{
+    font-size: 28px;
+    letter-spacing:1px;
+}
+
+.right .event-details .event-content p, .right .event-details .event-orgnizer p, .right .event-details .location p, .right .tournament-date p{
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-weight:600;
+    text-transform: capitalize;
+}
+.right .event-details .event-content p span, .right .event-details .event-orgnizer p span, .right .event-details .location p span, .right .tournament-date p span{
+    font-weight: 500;
+    margin-left: 10px;
+}
+.right .event-details .event-content, .right .event-details .event-orgnizer{
+    margin: 30px 0;
+}
+.right .event-details .event-content p i, .right .event-details .event-orgnizer p i, .right .event-details .location p i{
+    margin-right: 20px;
+}
+
+
+.right .event-details .event{
+    display:flex;
+}
+
+.right .event-details .event i{
+    font-size:17px;
+    margin-right: 20px;
+    line-height:1.5;
+
+}
+.right .event-details .location{
+    margin-bottom:20px;
+}
+.right .event-details .note{
+    font-size:16px;
+    font-weight:500;
+    text-transform: capitalize;
+}
+.right .register-btn{
+    margin-top:25px;
+}
+.right .register-btn .register{
+    background: var(--blue-radial-gradient);
+    text-decoration: none;
+    font-size: 18px;
+    padding : 5px 25px;
+    color: #fff;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.other-info .info-heading{
+    position: relative;
+    width: fit-content;
+}
+.other-info .info-heading::before{
+    content:" ";
+    position: absolute;
+    top: 35px;
+    left: 0;
+    width: 100%;
+    height:2px;
+    background-color:rgb(164, 164, 164);
+}
+.other-info .info-heading h3{
+    font-size:24px;
+    margin-bottom:15px ;
+    font-weight: 600;
+}
+.other-info .content{
+    font-size:16px;
+    line-height: 35px;
+    font-weight:500;
+    padding:15px 25px;
+       
+}
+.other-info .event-info{
+    border-bottom: 1px solid #c2c2c2;
+    width:100%;
+}
+.other-info .event-rules{
+    margin:35px 0;
+}
+.event-data{
+    margin-bottom:50px;
+}
+.border{
+    width: 92%;
+    margin: auto;
+    height: 2px;
+    background-color: #c2c2c2;
+    position: relative;
+}
